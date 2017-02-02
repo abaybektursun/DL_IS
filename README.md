@@ -1,5 +1,6 @@
 # UCA Computer Science Independent Study Course Github Page
-Supervisor : Dr. Sinan Kockara
+<br>
+**Supervisor : Dr. Sinan Kockara**
 
 ** Meeting date : Wednesday's 10:00 am at 311 HPC Lab **
 
@@ -43,7 +44,7 @@ Supervisor : Dr. Sinan Kockara
  ## Papers List
  - [Stanford University research study on identifying skin cancer.](http://news.stanford.edu/2017/01/25/artificial-intelligence-used-identify-skin-cancer/) - [Nature magazine link](http://www.nature.com/nature/journal/v542/n7639/pdf/nature21056.pdf)
 
- ** Useful Links ** 
+ ## Useful Links
  - [Stanford University ConvNets for Computer Vision course page.](http://cs231n.stanford.edu/)
  - [Caffe framework home page.](http://caffe.berkeleyvision.org/)
  - [CUDA Deep Learning (CuDNN) framework page.](https://developer.nvidia.com/cudnn)
