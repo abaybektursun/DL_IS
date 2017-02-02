@@ -1,12 +1,12 @@
 # UCA Computer Science Independent Study Course Github Page
 <br>
 **Supervisor : Dr. Sinan Kockara**
+<br>
+**Meeting date : Wednesday's 10:00 am at 311 HPC Lab**
 
-** Meeting date : Wednesday's 10:00 am at 311 HPC Lab **
-
- - ** Write a paragraph about next week plan and submit to Dr. Kockara. **
- - ** After each week presentation, we need to submit our progress report. This report will tell about our last week's progress on the proposed plan one week before. **
- - ** Our main focus is implementing ConvNets to train and test the data to predict malignancy of the image. **
+ - Write a paragraph about next week plan and submit to Dr. Kockara.
+ - After each week presentation, we need to submit our progress report. This report will tell about our last week's progress on the proposed plan one week before.
+ - Our main focus is implementing ConvNets to train and test the data to predict malignancy of the image.
 
 
  ## Timeline
