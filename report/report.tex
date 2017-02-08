@@ -67,11 +67,11 @@
 	\subsection{Challenges in Numerical Computation}
 		Due to the limited nature of computer memory it is hard to store accurate representations of long real numbers. Therefore, we often approximate and round using floating points. This means that we will always have some errors when performing any useful numerical computations, even with higher precision floating points. Although there are numerical scientists who dedicate their careers to solving this kinds of problems, so we would not have to, it still important to be aware of the issues and challenges. 
 	\paragraph{Overflow and Underflow.}
-	There are cases where small rounding error can cause big problems in spite of the fact that approximations are often better than we even need them to be. For example, when a very small number is approximated to be zero. This problem is called Underflow. It's easy to imagine how things can go nuclear with Underflow: division by zero, or something along the lines of: $ \frac{1}{10^5}exp(95) $ the answer is zero if the fraction term is under approximated, but the true answer is about $ 10686.47458 $. Overflow is equivalently harmful problem. It occurs when a number with large absolute value is approximated to be $-\infty $ or $+\infty $. Consider the next: 
+	There are cases where small rounding error can cause big problems in spite of the fact that approximations are often better than we even need them to be. For example, when a very small number is approximated to be zero. This problem is called Underflow. It's easy to imagine how things can go nuclear with Underflow: division by zero, or something along the lines of: $ \frac{1}{10^5}exp(95) $ will be zero if the fraction term is under approximated, but the true answer is about $ 10686.47458 $. Overflow is equivalently harmful problem. It occurs when a number with large absolute value is approximated to be $-\infty $ or $+\infty $. Consider the next: 
 	\begin{align}
 	softmax(x)_{i} = \frac{exp(x_{i})}{\sum_{j=1}^{n}exp(x_{j})}
 	\end{align}
-	This is Softmax function, it is often placed at the end of ANN topology. It is used to predict the probabilities associated with a multinoulli distribution. If all the values of $ x_{i} $ are equal to some arbitrarily large number, exponentiation will overflow, which in turn will lead to undefined answer. 
+	This is Softmax function (1.1), it is often placed at the end of ANN topology. It is used to predict the probabilities associated with a multinoulli distribution. If all the values of $ x_{i} $ are equal to some arbitrarily large number, exponentiation will overflow, which in turn will lead to undefined answer. 
 	\paragraph{Poor Conditioning}
 	
 	\subsection{Relevant Optimization Methods}
