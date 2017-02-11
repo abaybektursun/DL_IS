@@ -14,8 +14,9 @@
 
  - Week 1 (02/08/2017)
 	- Fundamentals of Deep Learning math background (Plan)
+	
 	- Introduction to Deep Learning Math background, started from Neural Network algorithm idea and how the algortihm was changed in time was discussed.
-	- Tasks for next week;
+	- Tasks for **Week 2**;
 		- Practice Neural Network single hidden layer algorithm manually by solving simple matrix operatins step by step.
 		- Implement simple Convolutional Neural Network algorithm on Caffe framework by using the dataset shared on last Wednesday. Create a report for the result to explain how the performance is and the specs of the computer that you use for the calculations. 
 		- Do literature survey on Deep Learning to have knowledge about how Deep Learning performance changes in time, and what is the state-of-the-art studies related to Deep Learning.
