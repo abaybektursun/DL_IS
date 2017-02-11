@@ -54,6 +54,7 @@
  - [Stanford University ConvNets for Computer Vision course page.](http://cs231n.stanford.edu/)
  - [Caffe framework home page.](http://caffe.berkeleyvision.org/)
  - [CUDA Deep Learning (CuDNN) framework page.](https://developer.nvidia.com/cudnn)
+ - [Halide Image Processing Language](http://halide-lang.org/)
 
 
 Feel free to contact me to change any info in case it's wrong.
