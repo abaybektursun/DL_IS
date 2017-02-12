@@ -60,9 +60,7 @@
 	
 	\maketitle
 	\section{Fundamentals of Deep Learning}
-		In this section I will shed some light onto the mathematical and computational concepts needed for understanding the basics of Deep Learning or any analytical methods for that matter. Most of the mathematical notation utilized here is same or similar to the one used in the famous "Deep Learning Book" [TODO: .bib]\par
-	Test 
-	
+		In this section I will shed some light onto the mathematical and computational concepts needed for understanding the basics of Deep Learning or any analytical methods for that matter. Most of the mathematical notation utilized here is same or similar to the one used in the famous "Deep Learning Book" [TODO: .bib]	
 	
 	\subsection{Challenges in Numerical Computation}
 		Due to the limited nature of computer memory it is hard to store accurate representations of long real numbers. Therefore, we often approximate and round using floating points. This means that we will always have some errors when performing any useful numerical computations, even with higher precision floating points. Although there are numerical scientists who dedicate their careers to solving this kinds of problems, so we would not have to, it still important to be aware of the issues and challenges. 
@@ -72,15 +70,19 @@
 	softmax(x)_{i} = \frac{exp(x_{i})}{\sum_{j=1}^{n}exp(x_{j})}
 	\end{align}
 	This is Softmax function (1.1), it is often placed at the end of ANN topology. It is used to predict the probabilities associated with a multinoulli distribution. If all the values of $ x_{i} $ are equal to some arbitrarily large number, exponentiation will overflow, which in turn will lead to undefined answer. 
-	\paragraph{Poor Conditioning} 
+	\paragraph{Poor Conditioning}  
+	The other common problem in numerical computing is poor conditioning. It refers to the problem of having large unexpected changes in the output of a function for small changes in the function's input. This kind of function with poor high condition is called ill-conditioned as oppose to well-conditioned problem.
 	
 	\subsection{Relevant Optimization Methods}
 	\subsubsection{First-Order Optimization Algorithms}
+	[gradient descent]
 	\subsubsection{Second-order Optimization Algorithms}
+	The optimization methods that involve second order derivatives are called Second-order. There are some advantages of Second-order Optimization Algorithms, but unfortunately they do not always work, if at all. The example of such algorithm would be one that uses Newton's method to jump the desired optima. 
+	
 	\paragraph{Different Gradient Descent Algorithms}
 	
 	\subsection{Neural Networks}
-	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
+	
 	
 	\section{Introduction to Caffe}
 	\section{Training Convolutional Neural Network on Caffe}
