@@ -74,8 +74,28 @@
 	The other common problem in numerical computing is poor conditioning. It refers to the problem of having large unexpected changes in the output of a function for small changes in the function's input. This kind of function with poor high condition is called ill-conditioned as oppose to well-conditioned problem.
 	
 	\subsection{Relevant Optimization Methods}
+    In the heart of Machine Learning and therefore Deep Learning there lie mathematical optimization algorithms. The mathematical concepts behind most of the optimization methods existed for long time, but we were able to harness their power only in the recent past. The driving force behind Deep Learning is optimization algorithm called Backpropagation, which is concrete implementation of Gradient Descent (reviewed in the next subsections), and an application of the chain rule, the rule that was around since Leibniz times. There are few reasons why it took so long to come up with modern machine learning approaches, the obvious one being non-existence of practical computational power for most of the scientific history. Yoshua Bengio also has given a great answer on Quora to a question "Why did it take so long to invent the backpropagation algorithm?" [https://goo.gl/MT9mIo]. As he says: "Lots of apparently obvious ideas only became obvious after the fact..." I believe that theoretical work of pure mathematics have great potential that will drive the future Deep Learning algorithms and help us put together the first blue print of true intelligence.\par
+    As the name suggest the main objective of a Deep Learning system is to learn, which is done through optimization. To have a clear understanding of what we are optimizing for, it is appropriate to use Mitchell's [1997] definition of learning: "A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E." In supervised Deep Learning, performance measure P is the prediction accuracy of a system. Thus, our main objective is to maximize the P, concretely, to minimize the error of prediction. The main optimization approach used in Deep Learning is gradient based, and that is what we will be focusing on next.  
 	\subsubsection{First-Order Optimization Algorithms}
-	[gradient descent]
+    Given a function $ f(x) $, we need to minimize it by changing parameter $ x $ such that $ x* = arg\ min f(x)$. Superscript $*$ denotes a optimal value that optimizes $f(x)$. The function we are trying to optimize is called cost function, also known as objective function, loss function, criterion, and error function depending on literature and field. \par 
+    First-Order optimization algorithm tries to minimize the cost function using its first order derivative $\frac{d}{dx}f(x)$ or shorter notation $f'(x)$. The main technique of doing so is Gradient Descent mentioned earlier. Derivative of a function tells us how the change in its input affects its output, and we could derive that for some input change $\epsilon $:\newline $f(x + \epsilon) \approx f(x) + \epsilon f'(x)$. It is also know that $ f(x - \epsilon sign(f'(x)) )  < f(x) $ given that $\epsilon$ is small enough. This is illustrated below (Fig 1.1). In the context of machine learning, $\epsilon$ is called learning rate, it is important hyperparameter for fine-tuning your learning system. \par
+    
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[scale=0.6]{gradient_descent.png}
+    \caption{The blue line $ f(x) = \frac{1}{2}x^2$ and the green line $f'(x) = x $ visualize how we can arrive at the global minima of a convex function by shifting $x$ in with small enough $\epsilon$ steps towards opposite sign of the derivative of $f(x)$}
+    \label{fig:fx_dfdx}
+\end{figure}
+
+Some terminology from Calculus:
+\begin{itemize}
+		\item Critical Points also known as Stationary Points are the points where $ f'(x) = 0 $ 
+		\item Local Minima and Local Maxima is a point at some interval of $x$ where $f(x)$ is the smallest or largest respectively.
+        \item Global Minima and Global Maxima are the absolute minimum or maximum point of $f(x)$ in all of $f(x)'s$ domain
+        \item Saddle Points are the critical points that are neither any kind of maxima nor minima
+	\end{itemize}
+    
+
 	\subsubsection{Second-order Optimization Algorithms}
 	The optimization methods that involve second order derivatives are called Second-order. There are some advantages of Second-order Optimization Algorithms, but unfortunately they do not always work, if at all. The example of such algorithm would be one that uses Newton's method to jump the desired optima. 
 	
