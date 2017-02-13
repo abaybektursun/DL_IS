@@ -49,12 +49,16 @@
 
  ## Papers List
  - [Stanford University research study on identifying skin cancer.](http://news.stanford.edu/2017/01/25/artificial-intelligence-used-identify-skin-cancer/) - [Nature magazine link](http://www.nature.com/nature/journal/v542/n7639/pdf/nature21056.pdf)
+ - [Imagenet classification with deep convolutional neural network](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
 
  ## Useful Links
  - [Stanford University ConvNets for Computer Vision course page.](http://cs231n.stanford.edu/)
  - [Caffe framework home page.](http://caffe.berkeleyvision.org/)
  - [CUDA Deep Learning (CuDNN) framework page.](https://developer.nvidia.com/cudnn)
  - [Halide Image Processing Language](http://halide-lang.org/)
+ - [Github Awesome Deep Learning Papers](https://github.com/terryum/awesome-deep-learning-papers) - Most cited papers are listed in this repo.
+ - [Github Deep Learning Papers Reading Roadmap](https://github.com/songrotek/Deep-Learning-Papers-Reading-Roadmap) - Well documented deep learning paper reading list.
+ - 
 
 
 Feel free to contact me to change any info in case it's wrong.
