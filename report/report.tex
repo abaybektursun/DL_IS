@@ -94,7 +94,22 @@ Some terminology from Calculus:
         \item Global Minima and Global Maxima are the absolute minimum or maximum point of $f(x)$ in all of $f(x)'s$ domain
         \item Saddle Points are the critical points that are neither any kind of maxima nor minima
 	\end{itemize}
-    
+    It is unlikely that you will ever have a single variable cost function. Most Deep Learning problems train on image, video, and audio data sets. It is not rear that input of your system will be a hundred thousand dimensional vector. Therefore, we need to generalize gradient descent to $f: \mathbb{R}^n \rightarrow \mathbb{R} $. Notice that the output of the function is still scalar, this needs to be true in order to minimization objective to make sense. \par
+    Instead of using derivative $\frac{d}{dx}f(x)$, we will need to use partial derivative, for example: $\frac{\partial}{\partial x_{i} }f(x)$ that tells us how output of $f(x)$ changes with respect to $x_{i}$ at point $x$, where $x_{i}$ is one of the variables in the input vector $x$. Gradient is an equivalent to the derivative in high dimensions. We write it as $\nabla_{x} f(x)$. Gradient is a vector consisting of all partial derivatives of $f(x)$. To find a critical point of high dimensional $f(x)$ is to find the gradient $\nabla_{x} f(x)$ of which all values are equal to zero. We could visualize a gradient using vector field. Here is an example with $\mathbb{R}^2$ gradient (Fig. 1.2).\par
+
+\begin{figure}[!htb]
+	\centering
+    \includegraphics[scale=0.6]{Quiver_edited.png}
+    \caption{Illustration of 2D  vector field where $x$-axis corresponds to the $x_0$ variable  and $y$-axis corresponds to $x_1$ variable. Here, you can see the area along the upward diagonal stripe in the middle of the vector filed where the arrows are very short. This area corresponds to $ x $ vectors where gradient gets closer and closer to zero}
+    \label{fig:Quiver_gradient}
+\end{figure}
+
+ Now, we can actually talk about the main topic of this subsection, the steepest descent. The directional derivative in direction of unit vector $\vec{u}$ is slope of $f$ in direction $\vec{u}$. Directional derivative is formally defined as $$ \frac{\partial}{\partial \vec{u}} f(\vec{x}) = \lim_{h\to0} \frac{f(\vec{x} + h\vec{u}) - f(\vec{x})}{h} = \nabla_{\vec{v}} f(\vec{x})$$
+We could look at one intuitive algebraic definition. Let say that we have a 2D vector $\vec{u} = \begin{bmatrix} a \\ b \end{bmatrix}$. Then our directional derivative of $f(\vec{x})$ in the direction of $\vec{u}$ is $a\frac{\partial}{\partial x_0}f + b\frac{\partial}{\partial x_1}f$. Notice that this is same as $\begin{bmatrix} a \\ b \end{bmatrix} \boldsymbol{\cdot} \begin{bmatrix} \frac{\partial f}{\partial x_0} \\  \frac{\partial f}{\partial x_1} \end{bmatrix} $ The second vector is the gradient so we can rewrite this as $\vec{u} \boldsymbol{\cdot} \nabla_{\vec{v}} f(\vec{x}) = \vec{u}^T \nabla_{\vec{v}} f(\vec{x}) $ This what we would get if we derived from the formal definition using chain rule.  \par
+So we would like to find direction in which $f$ decreases fastest, or we would like to minimize $f$. We do it making use of directional derivative 
+$$\underset{u,u^Tu=1}{\text{min}} u^T\nabla_x f(x) =$$
+$$ = \underset{u,u^Tu=1}{\text{min}} ||u||_2||\nabla_x f(x)||_2cos(\theta) $$
+
 
 	\subsubsection{Second-order Optimization Algorithms}
 	The optimization methods that involve second order derivatives are called Second-order. There are some advantages of Second-order Optimization Algorithms, but unfortunately they do not always work, if at all. The example of such algorithm would be one that uses Newton's method to jump the desired optima. 
