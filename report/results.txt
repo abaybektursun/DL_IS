@@ -1,0 +1,26 @@
+Cifar10
+Full:      
+real	61m 58.334s
+Test net output #0: accuracy = 0.8148
+Test net output #1: loss = 0.537193 (* 1 = 0.537193 loss)
+
+Quick: 
+
+real	0m 50.972s
+Test net output #0: accuracy = 0.7535
+Test net output #1: loss = 0.735697 (* 1 = 0.735697 loss)
+
+
+full_sigmoid_bn:
+real	12m46.975s
+Test net output #0: accuracy = 0.6413
+Test net output #1: loss = 1.12178 (* 1 = 1.12178 loss)
+
+
+
+
+
+
+
+
+
