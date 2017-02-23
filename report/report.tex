@@ -9,6 +9,7 @@
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
 \usepackage[pdftex]{graphicx}	
 \usepackage{url}
+\usepackage{listings}
 
 
 %%% Custom sectioning
@@ -114,14 +115,68 @@ $$ = \underset{u,u^Tu=1}{\text{min}} ||u||_2||\nabla_x f(x)||_2cos(\theta) $$
 	\subsubsection{Second-order Optimization Algorithms}
 	The optimization methods that involve second order derivatives are called Second-order. There are some advantages of Second-order Optimization Algorithms, but unfortunately they do not always work, if at all. The example of such algorithm would be one that uses Newton's method to jump the desired optima. 
 	
-	\paragraph{Different Gradient Descent Algorithms}
 	
 	\subsection{Neural Networks}
 	
 	
+	
 	\section{Introduction to Caffe}
+	Caffe is a one of the few industry strength Deep Learning Frameworks. It is an open-source software created by The Berkeley Artificial Intelligence Research (BAIR) Lab that started out as Yangqing Jia's thesis who was UC Berkeley's PhD student at that time [http://daggerfs.com/]. The strength of Caffe is its performance and ease of use. According to its developers it was made with expression, speed, and modularity in mind. It's main weakness is flexibility, or absence of it. Architecture in Caffe is defined in protobuff format using predefined nodes and optimization algorithms, leaving the developer to arrange the nodes and tune hyperparameters. Caffe has been most widely used Deep Learning framework both in Academia and Industry, although that title has slipped to TensorFlow's ownership in the recent past. Even the original developer Yangqing Jia moved on to help developing TensorFlow. Seeing the rise of projects like TensorFlow, Torch, and Theano, it seems like Caffe will not be one of the leading frameworks of the future. Nevertheless, Caffe will have its place a great prototyping tool and solution for time constrained agile projects. Caffe has it's own philosophy [http://caffe.berkeleyvision.org]:
+		\begin{itemize}
+			\item Expression: models and optimizations are defined as plaintext schemas instead of code.
+			\item Speed: for research and industry alike speed is crucial for state-of-the-art models and massive data. 
+			\item Modularity: new tasks and settings require flexibility and extension.
+			\item Openness: scientific and applied progress call for common code, reference models, and reproducibility.
+			\item Community: academic research, startup prototypes, and industrial applications all share strength by joint discussion and development in a BSD-2 project.
+		\end{itemize}
+	
 	\section{Training Convolutional Neural Network on Caffe}
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[scale=0.4]{cifar.png}
+		\caption{Visualization of the Caffe architecture used to train the Cifar models}
+		\label{fig:cifar}
+	\end{figure}
+
+	There first 'data' layer is defined by a data node that takes in mdb data input (Caffe understandable data format) with shape (channels and size):
+	\begin{lstlisting}[language=xml]
+	{ dim: 1 dim: 3 dim: 32 dim: 32 }
+	\end{lstlisting}
+	By froward pass path, data layer is fed to 'conv1' which is defined as five filters with stride of one.
+	
+	
 	\section{Testing and Tuning Hyperparameters}
+	Here, model was trained on CIFAR-10 dataset that is consists of 60000 image with 3 color (RGB) channels and 32x32 pixels. The whole dataset is around 160Mb and has 10 independent classes with 6000 images for each. It is split into training and testing sets with 50000 and 10000 images in each respectively. 
+	
+	The highest score obtained in this example of course are not as good as state of the art object recognition results, since the training images are not always fair:
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[scale=1.0]{cifar10.png}
+		\caption{There are many images that do not carry information needed due to low resolution. Often predicting the class of an object is even hard for humans}
+		\label{fig:cifar10ex}
+	\end{figure}
+	\newline Here is are descriptions of the system used for training: 
+	\begin{verbatim}
+	
+	H/W path                Device      Class       Description
+	===========================================================
+	system      To Be Filled By O.E.M. (To Be Filled By O.E.M.)
+	/0/4/5                              memory      288KiB L1 cache
+	/0/4/6                              memory      6MiB L2 cache
+	/0/4/7                              memory      8MiB L3 cache
+	/0/e                                memory      8GiB System Memory
+	/0/100/2/0                          display     GM206 [GeForce GTX 960]
+	\end{verbatim}
+	Full:      
+		61m 58.334s
+	Test net output: accuracy = 0.8148
+	\newline Quick: 
+		0m 50.972s
+	Test net output: accuracy = 0.7535
+	
+	
+	
+	
 	\section{Analysis of the Results and Further Investigation of Conv Net Architectures}
 	\section{Classification of Skin Cancer Using GPU Accelerated [Architecture] on Caffe}
 	\section{Analysis of the Skin Cancer Classification Results}
