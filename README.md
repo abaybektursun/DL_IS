@@ -58,7 +58,19 @@
  - [Halide Image Processing Language](http://halide-lang.org/)
  - [Github Awesome Deep Learning Papers](https://github.com/terryum/awesome-deep-learning-papers) - Most cited papers are listed in this repo.
  - [Github Deep Learning Papers Reading Roadmap](https://github.com/songrotek/Deep-Learning-Papers-Reading-Roadmap) - Well documented deep learning paper reading list.
+ 
+
+## Denoising | Noise Removal | Deconvolution | Upsampling
+ - [Neural Denoising with MLP(Multi Layer Perceptron)](http://webdav.is.mpg.de/pixel/files/neural_denoising/paper.pdf) - [Their research group](http://people.tuebingen.mpg.de/burger/neural_denoising/)
+ - [Medical image denoising using convolutional denoising autoencoders](https://arxiv.org/pdf/1608.04667.pdf)
+ - [Compression Artifacts Removal Using Convolutional Neural Networks](https://arxiv.org/pdf/1605.00366.pdf)
+ - [Deep Convolutional Neural Network for Image Deconvolution](https://papers.nips.cc/paper/5485-deep-convolutional-neural-network-for-image-deconvolution.pdf)
+ - [Image Denoising and Inpainting with Deep Neural Networks](https://papers.nips.cc/paper/4686-image-denoising-and-inpainting-with-deep-neural-networks.pdf)
+ - [DehazeNet: An End-to-End System for Single Image Haze Removal](https://arxiv.org/pdf/1601.07661.pdf) - [Github Repo](https://github.com/zlinker/DehazeNet)
+ - [Medical image denoising using convolutionaldenoising autoencoders](https://www.researchgate.net/publication/306226599_Medical_image_denoising_using_convolutional_denoising_autoencoders)
  - 
+
+
 
 
 Feel free to contact me to change any info in case it's wrong.
