@@ -68,7 +68,8 @@
  - [Image Denoising and Inpainting with Deep Neural Networks](https://papers.nips.cc/paper/4686-image-denoising-and-inpainting-with-deep-neural-networks.pdf)
  - [DehazeNet: An End-to-End System for Single Image Haze Removal](https://arxiv.org/pdf/1601.07661.pdf) - [Github Repo](https://github.com/zlinker/DehazeNet)
  - [Medical image denoising using convolutionaldenoising autoencoders](https://www.researchgate.net/publication/306226599_Medical_image_denoising_using_convolutional_denoising_autoencoders)
- - 
+ - [Melanoma Detection by Analysis of Clinical Images Using Convolutional Neural Network](https://www.researchgate.net/publication/308072516_Melanoma_Detection_by_Analysis_of_Clinical_Images_Using_Convolutional_Neural_Network)
+ - [Deep learning ensembles for melanoma recognition in dermoscopy images](https://arxiv.org/pdf/1610.04662.pdf)
 
 
 
