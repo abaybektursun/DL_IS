@@ -31,12 +31,19 @@
 	- Implementation of the system will start from this week.
 
  - **Week 4** (03/01/2017)
-	- How to test Caffe Convolutional Neural Network system?
+	- Neural Network backpropagation algorithm presentation.
+	- Research topic : How to write noises on our image dataset?
+		- There are some solutions out there but we need select the appropriate one.
+		- Image colorization with CNN-Autoencoders.
+	- Print out all your Neural Network study and share with group. 
 
  - **Week 5** (03/08/2017)
-	- Analyzing and report the results of tested system. 
-	- CuDNN sample project.
-	- Decision on architecture of our ConvNets system.
+	- Present Neural Network backrpopagation algorithm. Also look for other algorithms how do they work.
+	- Read image processing with CNN papers and run their sample code with our image dataset.
+		- [Neural Denoising with MLP(Multi Layer Perceptron)](http://webdav.is.mpg.de/pixel/files/neural_denoising/paper.pdf)
+		- [DehazeNet: An End-to-End System for Single Image Haze Removal](https://arxiv.org/pdf/1601.07661.pdf) - [Github Repo](https://github.com/zlinker/DehazeNet)
+		- [Image Denoising and Inpainting with Deep Neural Networks](https://papers.nips.cc/paper/4686-image-denoising-and-inpainting-with-deep-neural-networks.pdf)
+		- And other papers that are shared in the **Denoising | Noise Removal | Deconvolution | Upsampling** section.
 
  - **Week 6** - **Week 8** (03/15/2017 - 03/29/2017)
 	- Implementation of convolutional neural networks for our system and data.
