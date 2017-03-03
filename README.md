@@ -32,8 +32,8 @@
 
  - **Week 4** (03/01/2017)
 	- Neural Network backpropagation algorithm presentation.
-	- Research topic : How to write noises on our image dataset?
-		- There are some solutions out there but we need select the appropriate one.
+	- Research topic : How to remove noises on our image dataset?
+		- There are some solutions out there but we need to select the appropriate one.
 		- Image colorization with CNN-Autoencoders.
 	- Print out all your Neural Network study and share with group. 
 
