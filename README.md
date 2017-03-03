@@ -82,4 +82,4 @@
 
 
 
-Feel free to contact me to change any info in case it's wrong.
+Feel free to contact me to change any info in case it's not correct.
