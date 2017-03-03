@@ -65,6 +65,7 @@
  - [Halide Image Processing Language](http://halide-lang.org/)
  - [Github Awesome Deep Learning Papers](https://github.com/terryum/awesome-deep-learning-papers) - Most cited papers are listed in this repo.
  - [Github Deep Learning Papers Reading Roadmap](https://github.com/songrotek/Deep-Learning-Papers-Reading-Roadmap) - Well documented deep learning paper reading list.
+ - [How ConvNets work?](http://cs231n.github.io/convolutional-networks/)
  
 
 ## Denoising | Noise Removal | Deconvolution | Upsampling
