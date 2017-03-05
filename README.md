@@ -58,7 +58,7 @@
  - [Halide Image Processing Language](http://halide-lang.org/)
  - [Github Awesome Deep Learning Papers](https://github.com/terryum/awesome-deep-learning-papers) - Most cited papers are listed in this repo.
  - [Github Deep Learning Papers Reading Roadmap](https://github.com/songrotek/Deep-Learning-Papers-Reading-Roadmap) - Well documented deep learning paper reading list.
- - 
+ - [Understanding Neural Networks Through Deep Visualization](https://arxiv.org/pdf/1506.06579.pdf)
 
 
 Feel free to contact me to change any info in case it's wrong.
