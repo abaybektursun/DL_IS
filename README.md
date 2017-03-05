@@ -18,25 +18,32 @@
 	- Introduction to Deep Learning Math background, started from Neural Network algorithm idea and how the algortihm was changed in time was discussed.
 	- Tasks for **Week 2**;
 		- Practice Neural Network single hidden layer algorithm manually by solving simple matrix operatins step by step.
-		- Implement simple Convolutional Neural Network algorithm on Caffe framework by using the dataset shared on last Wednesday. Create a report for the result to explain how the performance is and the specs of the computer that you use for the calculations. 
+		- Implement simple Convolutional Neural Network algorithm on Caffe framework by using the dataset shared on last Wednesday. Create a report for the result to explain how the performance is and the specs of the computer that you use for the calculations.
 		- Do literature survey on Deep Learning to have knowledge about how Deep Learning performance changes in time, and what is the state-of-the-art studies related to Deep Learning.
 
  - **Week 2** (02/15/2017)
 	- Introduction to Caffe.
 	- Sample project/example of Caffe. (with and without CUDA implementation)
-	- Learning about our dataset. 
+	- Learning about our dataset.
 
  - **Week 3** (02/22/2017)
 	- How to train Caffe Convolutional Neural Network system?
 	- Implementation of the system will start from this week.
 
  - **Week 4** (03/01/2017)
-	- How to test Caffe Convolutional Neural Network system?
+	- Neural Network backpropagation algorithm presentation.
+	- Research topic : How to remove noises on our image dataset?
+		- There are some solutions out there but we need to select the appropriate one.
+		- Image colorization with CNN-Autoencoders.
+	- Print out all your Neural Network study and share with group.
 
  - **Week 5** (03/08/2017)
-	- Analyzing and report the results of tested system. 
-	- CuDNN sample project.
-	- Decision on architecture of our ConvNets system.
+	- Present Neural Network backrpopagation algorithm. Also look for other algorithms how do they work.
+	- Read image processing with CNN papers and run their sample code with our image dataset.
+		- [Neural Denoising with MLP(Multi Layer Perceptron)](http://webdav.is.mpg.de/pixel/files/neural_denoising/paper.pdf)
+		- [DehazeNet: An End-to-End System for Single Image Haze Removal](https://arxiv.org/pdf/1601.07661.pdf) - [Github Repo](https://github.com/zlinker/DehazeNet)
+		- [Image Denoising and Inpainting with Deep Neural Networks](https://papers.nips.cc/paper/4686-image-denoising-and-inpainting-with-deep-neural-networks.pdf)
+		- And other papers that are shared in the **Denoising | Noise Removal | Deconvolution | Upsampling** section.
 
  - **Week 6** - **Week 8** (03/15/2017 - 03/29/2017)
 	- Implementation of convolutional neural networks for our system and data.
@@ -59,6 +66,18 @@
  - [Github Awesome Deep Learning Papers](https://github.com/terryum/awesome-deep-learning-papers) - Most cited papers are listed in this repo.
  - [Github Deep Learning Papers Reading Roadmap](https://github.com/songrotek/Deep-Learning-Papers-Reading-Roadmap) - Well documented deep learning paper reading list.
  - [Understanding Neural Networks Through Deep Visualization](https://arxiv.org/pdf/1506.06579.pdf)
+ - [How ConvNets work?](http://cs231n.github.io/convolutional-networks/)
 
+
+## Denoising | Noise Removal | Deconvolution | Upsampling
+ - [Neural Denoising with MLP(Multi Layer Perceptron)](http://webdav.is.mpg.de/pixel/files/neural_denoising/paper.pdf) - [Their research group](http://people.tuebingen.mpg.de/burger/neural_denoising/)
+ - [Medical image denoising using convolutional denoising autoencoders](https://arxiv.org/pdf/1608.04667.pdf)
+ - [Compression Artifacts Removal Using Convolutional Neural Networks](https://arxiv.org/pdf/1605.00366.pdf)
+ - [Deep Convolutional Neural Network for Image Deconvolution](https://papers.nips.cc/paper/5485-deep-convolutional-neural-network-for-image-deconvolution.pdf)
+ - [Image Denoising and Inpainting with Deep Neural Networks](https://papers.nips.cc/paper/4686-image-denoising-and-inpainting-with-deep-neural-networks.pdf)
+ - [DehazeNet: An End-to-End System for Single Image Haze Removal](https://arxiv.org/pdf/1601.07661.pdf) - [Github Repo](https://github.com/zlinker/DehazeNet)
+ - [Medical image denoising using convolutionaldenoising autoencoders](https://www.researchgate.net/publication/306226599_Medical_image_denoising_using_convolutional_denoising_autoencoders)
+ - [Melanoma Detection by Analysis of Clinical Images Using Convolutional Neural Network](https://www.researchgate.net/publication/308072516_Melanoma_Detection_by_Analysis_of_Clinical_Images_Using_Convolutional_Neural_Network)
+ - [Deep learning ensembles for melanoma recognition in dermoscopy images](https://arxiv.org/pdf/1610.04662.pdf)
 
 Feel free to contact me to change any info in case it's wrong.
