@@ -116,8 +116,34 @@ $$ = \underset{u,u^Tu=1}{\text{min}} ||u||_2||\nabla_x f(x)||_2cos(\theta) $$
 	\subsubsection{Second-order Optimization Algorithms}
 	The optimization methods that involve second order derivatives are called Second-order. There are some advantages of Second-order Optimization Algorithms, but unfortunately they do not always work, if at all. The example of such algorithm would be one that uses Newton's method to jump the desired optima. 
 	
-	
+	\subsection{Probability}
 	\subsection{Neural Networks}
+	\subsubsection{Feedforward Example}
+	It's a good idea to walk thorough example of a feed forward network. The most common example shown in introductory Deep Learning courses is learning XOR (exclusive 'or') function. XOR takes in two binary values and returns 1 if only one of the two variables is equal to 1, returns 0 otherwise. 
+	Let $X$ be our design matrix that consists of all the possible input vectors. Let $y$ be the corresponding outputs. 
+		$$ X = 
+		\begin{bmatrix}
+			0 & 0 \\
+			0 & 1 \\
+			1 & 0 \\
+			1 & 1
+		\end{bmatrix} 
+		y = 
+		\begin{bmatrix}
+		0 \\
+		1 \\
+		1 \\
+		0 
+		\end{bmatrix}$$
+	We set our cost function to me a mean squared error $J(\theta)$ just for this example. The Deep Learning book describes more appropriate functions for binary input [cite], but for simplicity sake using MSE would be appropriate:
+		$$ J(\theta)=\frac{1}{4}\sum_{x\in X}^{}(y-f(x;\theta))^2 $$
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[scale=0.6]{xor_ex.png}
+		\caption{Visualization of the Caffe architecture used to train the Cifar models}
+		\label{fig:cifar}
+	\end{figure}
 	
 	
 	
@@ -160,7 +186,7 @@ $$ = \underset{u,u^Tu=1}{\text{min}} ||u||_2||\nabla_x f(x)||_2cos(\theta) $$
 	\begin{verbatim}
 	
 	H/W path                Device      Class       Description
-	===========================================================
+	=============================================================================
 	system      To Be Filled By O.E.M. (To Be Filled By O.E.M.)
 	/0/4/5                              memory      288KiB L1 cache
 	/0/4/6                              memory      6MiB L2 cache
