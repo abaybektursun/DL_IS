@@ -49,7 +49,7 @@
  	- Solve all problems listed below which are related to NeuralNets.
  		- How do we decide how many hidden layer(s) we need to use in a system?
  		- How do we decide how many node(neuron) in a hidden layer we need to use in a system?
- 		- Is there any alternative for activation function using instead of "Sigmoid" function?https://hackernoon.com/autoencoders-deep-learning-bits-1-11731e200694#.ykdao8jat
+ 		- Is there any alternative for activation function using instead of "Sigmoid" function?
  		- What is Stochastic Gradient Descent? Can we use this method instead of Batch Gradient Descent?
  		- How do we choose weights in the system?
  		- Which method do we use to check the correctness of the system?
@@ -66,7 +66,7 @@
 
  	- Train a CNN system using with TensorFlow training with our image dataset. And let's see how the system work and what we will need to customize according to our requirements.
 
- - **Week 6** - **Week 8** (03/15/2017 - 03/29/2017)
+ - **Week 7** - **Week 8** (03/22/2017 - 03/29/2017)
 	- Implementation of convolutional neural networks for our system and data.
 
  - **Week 9** (04/05/2017)
