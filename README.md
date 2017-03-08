@@ -101,5 +101,6 @@
  - [Melanoma Detection by Analysis of Clinical Images Using Convolutional Neural Network](https://www.researchgate.net/publication/308072516_Melanoma_Detection_by_Analysis_of_Clinical_Images_Using_Convolutional_Neural_Network)
  - [Deep learning ensembles for melanoma recognition in dermoscopy images](https://arxiv.org/pdf/1610.04662.pdf)
  - [Deep Learning for Image restoration and segmentation by Hackernoon](https://hackernoon.com/autoencoders-deep-learning-bits-1-11731e200694#.ykdao8jat)
+ - [Efficient BackProp by LeCunn](https://cseweb.ucsd.edu/classes/wi08/cse253/Handouts/lecun-98b.pdf)
 
 Feel free to contact me to change any info in case it's wrong.
