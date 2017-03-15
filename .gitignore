@@ -1,3 +1,7 @@
 *.log
 *.pdf
 *.gz
+*.h5
+*.binaryproto
+cifar10_test_lmdb/
+cifar10_train_lmdb/
