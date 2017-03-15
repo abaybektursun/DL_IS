@@ -71,7 +71,7 @@
 	\begin{align}
 	softmax(x)_{i} = \frac{exp(x_{i})}{\sum_{j=1}^{n}exp(x_{j})}
 	\end{align}
-	This is Softmax function (1.1), it is often placed at the end of ANN topology. It is used to predict the probabilities associated with a multinoulli distribution. If all the values of $ x_{i} $ are equal to some arbitrarily large number, exponentiation will overflow, which in turn will lead to undefined answer. 
+	This is Softmax function (1.1), it is often placed at the end of the deep networks. It is used to predict the probabilities associated with a multinoulli distribution. If all the values of $ x_{i} $ are equal to some arbitrarily large number, exponentiation will overflow, which in turn will lead to undefined answer. 
 	\paragraph{Poor Conditioning}  
 	The other common problem in numerical computing is poor conditioning. It refers to the problem of having large unexpected changes in the output of a function for small changes in the function's input. This kind of function with poor high condition is called ill-conditioned as oppose to well-conditioned problem.
 	
@@ -120,22 +120,22 @@ $$ = \underset{u,u^Tu=1}{\text{min}} ||u||_2||\nabla_x f(x)||_2cos(\theta) $$
 	\subsection{Neural Networks}
 	Historically, neural networks were introduced in 1940s and were first developed as shallow linear models [cite]. Since first neural networks were linear, they could not even fit a simple functions like XOR (Which is discussed int he next subsection), and received lot of backlash which almost entirely has killed the whole filed. Many critics of neural networks did not like the sentiment of people embracing nature inspired approach. Non linear learning was achieved during 1960-1970s when computer scientists [Kelly, Denham, Bryson 1960;] were able to develop dynamic methods for computing gradient.
 	The first push that brought Neural Networks to live was the book called Parallel Distributed Processing which showcased successful applications of learning though backpropagation.
-	One of the first commercial applications of neural networks were developed by Dr. Yann LeCun who is the father of Convolutional Neural networks. In 1988, Dr. LeCun started working as a research scientists for Bell Labs where he developed the most successful OCR (Optical character recognition) of its time. He created a dataset that allowed other developers and scientists to develop their own OCR systems. It's called MNIST and it is currently the most famous problem to solve in the introductory neural networks courses. I had a pleasure to  have a brief interaction with Dr. LeCun on Facebook (Figure 1.3):
+	One of the first commercial applications of neural networks were developed by Dr. Yann LeCun who is the father of Convolutional Neural networks. In 1988, Dr. LeCun started working as a research scientists for Bell Labs where he developed the most successful OCR (Optical character recognition) of its time using his multilayer neural network architecture. He created a dataset that allowed other developers and scientists to develop their own OCR systems. It's called MNIST and it is currently the most famous problem to solve in the introductory neural networks courses. I had a pleasure to  have a brief interaction with Dr. LeCun on Facebook (Figure 1.3):
 	\begin{figure}[!htb]
 		\centering
 		\includegraphics[scale=0.6]{sempai.PNG}
 		\caption{Sempai}
 		\label{fig:sempai}
 	\end{figure}
-	\newline After industry had the taste of neural networks in 1990s, people started realizing the unreasonable effectiveness of the algorithms that can be developed using neural networks. Slowly but surely neural networks were gaining popularity, and by 2000s the field was on the of the fast moving fields in computer science. Companies like Google started achieving amazing results, which sparked interest in many developers and scientists. New competitions and challenges like ImageNet were being held and they gave birth to a new field in around 2006 - Deep Learning. Today, Deep Learning has it's own culture that is separate from all the other machine learning and statistics communities. There are already dozens of successful deep learning architectures, but the most common one is Deep Feedforward Network which in essence is multilayer perceptron neural network. We will only focus on Feedforward Networks since they could be put together using any Machine Learning framework like Caffe (Feedforward Nets even have SAS implementations).
+	\newline After industry had the taste of neural networks in 1990s, people started realizing the unreasonable effectiveness of the technology that can be developed using neural networks. Slowly but surely neural networks were gaining popularity, and by 2000s the field was on the of the fast moving fields in computer science. Companies like Google started achieving amazing results, which sparked interest in many developers and scientists. New competitions and challenges like ImageNet were being held and they gave birth to a new field in around 2006 - Deep Learning. Today, Deep Learning has it's own culture that is separate from all the other machine learning and statistics communities. There are already dozens of successful deep learning architectures, but the most common one is Deep Feedforward Network which in essence is multilayer perceptron neural network. We will only focus on Feedforward Networks since they are most useful and could be put together using any Machine Learning framework like Caffe (Feedforward Nets even have SAS implementations).
 	\par 
 		The objective of Deep Forward network is to get as close approximation of function $f^*$ as possible. Where $f^*$ is true a function which maps input data $x$ to a class $y$ such that $ f^*(x) = y $. For example $f^*$ can be a function that maps image of a digit to vector $y$ where one of the values of $y^j = 1$ corresponds to the correct class $j$ to which the digit on image belongs to.
 	Feed Forward networks have a good self explanatory name. Data is consumed in feed forward chain manner, where the first layer of the network is $f_1(x)$, the second layer is $f_2(x)$ and so on until $f_n(x)$. The data $x$ is fed to the firs layer, and then its output will be the input of the next layer, and its out to the next. The entire network will form a function $f(x) = f_n(..(f_3(f_2(f_1(x)))..) $ which is hopefully $\approx f^*(x)$. Deep Learning earned its name because of it's deep architecture with many layers. A networks with $n$ layers is said to have depth of $n$. The final layer is called output layer which is in case of Feedforward network is a vector of classes, or probabilities of data belonging to a particular class. The layers between the input and output layers are called hidden layers, and they are the main ingredient of Deep Learning that makes it the most powerful learning technique. Deep Learning extend the idea if linear models form regression techniques, but instead of approximating $f(x)$ directly, it applies the linear model to non linearly transformed space $\phi(x)$. We can think of $\phi$ transformation as giving a new representation of the data. I subjectively, find this non linear transform by hidden layers to be most beautiful thing about Deep Learning. To have a more complete picture Deep Feedforward network we write our model to be $y = \phi(x;\theta)^\top w $. Where $\phi$ learns parameters $\theta$ from the data $x$. $w$ are the weights that map $\phi$ to output layer.
-	Unfortunately, it turns out that Deep Feedforward networks, unlike manually engineered features, or Radial basis kernels, give up convexity of training problems. However, the benefits of deep network overweight all the challenges. A well trained network can automatically learn needed features and have a state of the art accuracy.
+	Unfortunately, it turns out that Deep Feedforward networks, unlike manually engineered features or radial basis kernels, give up convexity of training problems. However, the benefits of deep network overweight all the challenges. A well trained network can automatically learn needed features and have a state of the art accuracy.
 	
 	
 	\subsubsection{Feedforward Example}
-	It's a good idea to walk thorough example of a feed forward network. The most common example shown in introductory Deep Learning courses is learning XOR (exclusive 'or') function. XOR takes in two binary values and returns 1 if only one of the two variables is equal to 1, returns 0 otherwise. 
+	It's a good idea to walk thorough example of a feed forward network. The most common example shown in introductory Deep Learning courses is learning XOR (exclusive 'or') function. XOR takes in two binary values and returns 1 if only one of the two variables is equal to 1, returns 0 otherwise.
 	Let $X$ be our design matrix that consists of all the possible input vectors. Let $y$ be the corresponding outputs. 
 		$$ X = 
 		\begin{bmatrix}
@@ -152,17 +152,74 @@ $$ = \underset{u,u^Tu=1}{\text{min}} ||u||_2||\nabla_x f(x)||_2cos(\theta) $$
 		0 
 		\end{bmatrix}$$
 	We set our cost function to me a mean squared error $J(\theta)$ just for this example. The Deep Learning book describes more appropriate functions for binary input [cite], but for simplicity sake using MSE would be appropriate:
+	
 		$$ J(\theta)=\frac{1}{4}\sum_{x\in X}^{}(y-f(x;\theta))^2 $$
+	If we chose the form of the model to be linear $ f(x;w,b)=x^\top w + b $, cost can be minimized in closed form using normal equations [dlb]. People have already calculated this, and as a result obtained $ w = 0 $ and $ b = \frac{1}{2}$. However this linear model would have only one output 0.5 for any input, meaning it is not able to approximate XOR function. To solve this we introduce non linearity by adding a hidden layer. Let's call the hidden layer vector $h$ which is defined to be $ h = f_1(x,W,c) $ then output will be $ y = f_2(h;w,b)$ Where matrix $W$ and vector $w$ are the synapses (or weights if you do not like the sentiment), $c$ and $b$ are the intercept terms or biases. Putting functions together we construct a chained network:
+		$$ f_2(f_1(x,W,c);w,b) $$
+	
+	
 	
 	\begin{figure}[!htb]
 		\centering
 		\includegraphics[scale=0.6]{xor_ex.png}
-		\caption{Visualization of the Caffe architecture used to train the Cifar models}
+		\caption{XOR example, here the hidden layer is vector $ h = f_1 $}
 		\label{fig:cifar}
 	\end{figure}
+	So, where does the non linearity come from? It comes from the activation in the hidden layer.
+	We first apply an affine transformation on the input and pass it to the activation function $ f_1 = h = g(W^\top x + c)$ where $g$ is the activation function. The recommended activation function is the rectified linear unit or ReLU for short [Hinton 2010]. ReLU is simply $ g(z) = max\{0,z\} $
+	Again, let's put the pieces together to from a complete network:
+	$$ f(x; W,c,w,b) = w^\top max\{0,W^\top x + c\} + b $$
 	
-	
-	
+	After network learns the XOR function we can show that:
+	$$ W = 
+	\begin{bmatrix}
+	1 & 1 \\
+	1 & 1
+	\end{bmatrix} 
+	c = 
+	\begin{bmatrix}
+	0 \\
+	-1 \\ 
+	\end{bmatrix}
+	w = 
+	\begin{bmatrix}
+	1 \\
+	-2 \\ 
+	\end{bmatrix} b = 0$$
+	We can now feedforward through the network. First we start from transformation:
+		$$ XW = 
+		\begin{bmatrix}
+		0 & 0 \\
+		1 & 1 \\
+		1 & 1 \\
+		2 & 2
+		\end{bmatrix} $$
+	and we complete out first affine transformation by adding the intercept vector $c$:
+		$$ 
+		\begin{bmatrix}
+		0 & -1 \\
+		1 & 0 \\
+		1 & 0 \\
+		2 & 1
+		\end{bmatrix} $$
+	Now, we need to use activation function. If you have not noticed, in this space all the examples lie on a single line and linear model can not work with this to produce valid XOR.
+	After we apply ReLU, our matrix looks like this:
+	$$ 
+	\begin{bmatrix}
+	0 & 0 \\
+	1 & 0 \\
+	1 & 0 \\
+	2 & 1
+	\end{bmatrix} $$
+	ReLU has changed the space, and the vectors no longer lie on a common line. Linear model now can predict the classes correctly. We apply linear transformation to get:
+		$$ 
+	\begin{bmatrix}
+	0 \\
+	1 \\
+	1 \\
+	0 
+	\end{bmatrix} $$
+	which is exactly the $y$ vector from the XOR definition. We did not apply bias $b$ since it equals to 0. In this idealized case network achieved absolute minimum of cost. In real useful example however, absolute is never reached and good approximation of $f^*$ is learned.
 	\section{Introduction to Caffe}
 	Caffe is a one of the few industry strength Deep Learning Frameworks. It is an open-source software created by The Berkeley Artificial Intelligence Research (BAIR) Lab that started out as Yangqing Jia's thesis who was UC Berkeley's PhD student at that time [http://daggerfs.com/]. The strength of Caffe is its performance and ease of use. According to its developers it was made with expression, speed, and modularity in mind. It's main weakness is flexibility, or absence of it. Architecture in Caffe is defined in protobuff format using predefined nodes and optimization algorithms, leaving the developer to arrange the nodes and tune hyperparameters. Caffe has been most widely used Deep Learning framework both in Academia and Industry, although that title has slipped to TensorFlow's ownership in the recent past. Even the original developer Yangqing Jia moved on to help developing TensorFlow. Seeing the rise of projects like TensorFlow, Torch, and Theano, it seems like Caffe will not be one of the leading frameworks of the future. Nevertheless, Caffe will have its place a great prototyping tool and solution for time constrained agile projects. Caffe has it's own philosophy [http://caffe.berkeleyvision.org]:
 		\begin{itemize}
