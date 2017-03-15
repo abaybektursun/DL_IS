@@ -45,7 +45,28 @@
 		- [Image Denoising and Inpainting with Deep Neural Networks](https://papers.nips.cc/paper/4686-image-denoising-and-inpainting-with-deep-neural-networks.pdf)
 		- And other papers that are shared in the **Denoising | Noise Removal | Deconvolution | Upsampling** section.
 
- - **Week 6** - **Week 8** (03/15/2017 - 03/29/2017)
+ - **Week 6** (03/15/2017)
+ 	- Solve all problems listed below which are related to NeuralNets.
+ 		- How do we decide how many hidden layer(s) we need to use in a system?
+ 		- How do we decide how many node(neuron) in a hidden layer we need to use in a system?
+ 		- Is there any alternative for activation function using instead of "Sigmoid" function?
+ 		- What is Stochastic Gradient Descent? Can we use this method instead of Batch Gradient Descent?
+ 		- How do we choose weights in the system?
+ 		- Which method do we use to check the correctness of the system?
+ 		- How do we get rid of overfitting?
+ 			- Increase nnumber of input data
+ 			- Regularization
+ 		- After optimization plot, there is a jump on cost function. What can be the reason?
+
+ 	- Try the NeuralNets source code with actual data to see how it works?
+ 	- We need to play with image dataset to remove noise on these images if needed. Follow instructions listed below;
+ 		- Read "DehazeNet: An End-to-End System for Single Image Haze Removal" paper and play with the source which is github link provided below.
+ 		- Read Medical image denoising using convolutional denoising autoencoders paper and try to implement from scratch.
+ 		- Read blog post on [this link](https://hackernoon.com/autoencoders-deep-learning-bits-1-11731e200694#.ykdao8jat). It explains how image processing methods work with deep learning.
+
+ 	- Train a CNN system using with TensorFlow training with our image dataset. And let's see how the system work and what we will need to customize according to our requirements.
+
+ - **Week 7** - **Week 8** (03/22/2017 - 03/29/2017)
 	- Implementation of convolutional neural networks for our system and data.
 
  - **Week 9** (04/05/2017)
@@ -79,5 +100,7 @@
  - [Medical image denoising using convolutionaldenoising autoencoders](https://www.researchgate.net/publication/306226599_Medical_image_denoising_using_convolutional_denoising_autoencoders)
  - [Melanoma Detection by Analysis of Clinical Images Using Convolutional Neural Network](https://www.researchgate.net/publication/308072516_Melanoma_Detection_by_Analysis_of_Clinical_Images_Using_Convolutional_Neural_Network)
  - [Deep learning ensembles for melanoma recognition in dermoscopy images](https://arxiv.org/pdf/1610.04662.pdf)
+ - [Deep Learning for Image restoration and segmentation by Hackernoon](https://hackernoon.com/autoencoders-deep-learning-bits-1-11731e200694#.ykdao8jat)
+ - [Efficient BackProp by LeCunn](https://cseweb.ucsd.edu/classes/wi08/cse253/Handouts/lecun-98b.pdf)
 
 Feel free to contact me to change any info in case it's wrong.
