@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/abaybektursun/projects/GitHub/IndependentStudy/source/normalization/main.cpp
+stdio.h
+-
+opencv2/opencv.hpp
+-
+
