@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project( Fourier )
+find_package( OpenCV REQUIRED )
+add_executable( Fourier main.cpp )
+target_link_libraries( Fourier ${OpenCV_LIBS} )
