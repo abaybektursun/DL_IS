@@ -11,6 +11,7 @@
 \usepackage{url}
 \usepackage{listings}
 \usepackage{lmodern}
+\usepackage{accents}
 
 
 %%% Custom sectioning
@@ -123,7 +124,7 @@ $$ = \underset{u,u^Tu=1}{\text{min}} ||u||_2||\nabla_x f(x)||_2cos(\theta) $$
 	One of the first commercial applications of neural networks were developed by Dr. Yann LeCun who is the father of Convolutional Neural networks. In 1988, Dr. LeCun started working as a research scientists for Bell Labs where he developed the most successful OCR (Optical character recognition) of its time using his multilayer neural network architecture. He created a dataset that allowed other developers and scientists to develop their own OCR systems. It's called MNIST and it is currently the most famous problem to solve in the introductory neural networks courses. I had a pleasure to  have a brief interaction with Dr. LeCun on Facebook (Figure 1.3):
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[scale=0.6]{sempai.PNG}
+		\includegraphics[scale=0.55]{sempai.PNG}
 		\caption{Sempai}
 		\label{fig:sempai}
 	\end{figure}
@@ -220,6 +221,22 @@ $$ = \underset{u,u^Tu=1}{\text{min}} ||u||_2||\nabla_x f(x)||_2cos(\theta) $$
 	0 
 	\end{bmatrix} $$
 	which is exactly the $y$ vector from the XOR definition. We did not apply bias $b$ since it equals to 0. In this idealized case network achieved absolute minimum of cost. In real useful example however, absolute is never reached and good approximation of $f^*$ is learned.
+	
+	\subsubsection{Cost function, Activation, and Layers} 
+	Modern deep learning architectures employ the idea of learning conditional distribution with maximum likelihood. Cost function, also known as loss, is defined to be negative log likelihood. This method is called cross-entropy:
+	$$ J(\theta) = -\mathbb E_{x,y \sim \hat{p}_{data}}log(p_{model}(y|x))$$
+	Maximum likelihood approach of deriving the cost function is advantageous because it allows you not to worry about choosing the right function for every model. Instead, cost function is automatically determined by specifying a model $p(y|x)$.
+	
+	
+	In the past, the most widely accepted activation function was logistic sigmoid:
+	 $$ g(z) = \sigma(z) = \frac{1}{1 + e^{-z}}$$
+	However, Yann LeCun in his famous paper "Efficient Backprop" showed that traditional sigmoid should not be used and recommended using hyperbolic tangent, also an sigmoidal unit:
+	$$ g(z) = tanh(z) $$
+	which then became popular. Hyperbolic tangent is closely related to the logistic sigmoid, since $tanh = 2\sigma (2z)-1$ basically, $ tanh $ is scaled version of sigmoid. For most of the Deep Learning problems both of these activations perform worse compare to piecewise ReLU. Sigmoidal activations saturate bad across most of their domain. When input $z$ is large positive value, sigmoids saturate to a high value, and when $z$ is very negative, they saturate to a low value. They are only useful when $z$ is near 0. This can lead gradient based learning to bad results. Thus, using sigmoids with deep feedforward networks is discouraged. However, architectures like recurrent neural networks and autoencoders have restriction due to which piece wise functions can not be used, and sigmoids are applied regardless of the saturation issues. There are several generalizations of ReLU, and one of them Maxuot unit. Maxout is not an element wise function like ReLU, instead it divides input into groups of $k$ values. 
+		$$ g(z)_i = \underaccent{j \in \mathbb G^{(i)}}{max} \ z_j$$
+	Maxout can generalize well with without regularization given that training set is large and the number of pieces per unit is lo[Cai et at.,2013]
+	\par Feedforward network can be thought of as a universal non linear function appropriator. The Universal Approximation Theorem (Hornik 1989) tells us that a feedforward network with at least one hidden layer with activation function can approximate any Borel measurable function from one finite dimensional space to another with any desired non zero error.
+	
 	\section{Introduction to Caffe}
 	Caffe is a one of the few industry strength Deep Learning Frameworks. It is an open-source software created by The Berkeley Artificial Intelligence Research (BAIR) Lab that started out as Yangqing Jia's thesis who was UC Berkeley's PhD student at that time [http://daggerfs.com/]. The strength of Caffe is its performance and ease of use. According to its developers it was made with expression, speed, and modularity in mind. It's main weakness is flexibility, or absence of it. Architecture in Caffe is defined in protobuff format using predefined nodes and optimization algorithms, leaving the developer to arrange the nodes and tune hyperparameters. Caffe has been most widely used Deep Learning framework both in Academia and Industry, although that title has slipped to TensorFlow's ownership in the recent past. Even the original developer Yangqing Jia moved on to help developing TensorFlow. Seeing the rise of projects like TensorFlow, Torch, and Theano, it seems like Caffe will not be one of the leading frameworks of the future. Nevertheless, Caffe will have its place a great prototyping tool and solution for time constrained agile projects. Caffe has it's own philosophy [http://caffe.berkeleyvision.org]:
 		\begin{itemize}
