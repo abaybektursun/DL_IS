@@ -5,11 +5,11 @@ using namespace cv;
 
 Mat resize_pad(Mat image);
 
-int main(int argc, char** argv )
+int main(int argc, char* argv[] )
 {
-    if ( argc != 2 )
+    if ( argc != 3 )
     {
-        printf("usage: DisplayImage.out <Image_Path>\n");
+        printf("usage: DisplayImage.out <Image_Path> <>\n");
         return -1;
     }
 
@@ -23,11 +23,11 @@ int main(int argc, char** argv )
     }
 
 
-    namedWindow("Display Image", WINDOW_AUTOSIZE );
-    imshow("Display Image", resize_pad(image));
-    //imshow("Display Image", image);
+    //namedWindow("Display Image", WINDOW_AUTOSIZE );
+    //imshow("Display Image", resize_pad(image));.
+    //waitKey(0);
 
-    waitKey(0);
+    imwrite(argv[2], resize_pad(image));
 
     return 0;
 }
@@ -62,14 +62,14 @@ Mat resize_pad(Mat image)
     
     Mat resized;
     resize(image,resized,new_size);
-    std::cout << "Original: " << image.rows << " by " << image.cols << std::endl;
-    std::cout << "Resized: "  << new_rows << " by " << new_cols << std::endl;
+    //std::cout << "Original: " << image.rows << " by " << image.cols << std::endl;
+    //std::cout << "Resized: "  << new_rows << " by " << new_cols << std::endl;
 
     Mat padded(boxSide, boxSide, CV_8UC3);
     copyMakeBorder(resized, padded, top, bottom, left, right, BORDER_CONSTANT);
 
-    std::cout << left << ", " << right << ", " << top << ", " << bottom << std::endl;
-    std::cout << "Padded: "  << padded.rows << " by " << padded.cols << std::endl;
+    //std::cout << left << ", " << right << ", " << top << ", " << bottom << std::endl;
+    //std::cout << "Padded: "  << padded.rows << " by " << padded.cols << std::endl;
 
 
     return padded;
