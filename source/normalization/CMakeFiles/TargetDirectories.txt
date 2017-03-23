@@ -1,1 +1,1 @@
-/home/abaybektursun/projects/GitHub/IndependentStudy/source/normalization/CMakeFiles/Nomrmalization.dir
+/home/abaybektursun/projects/GitHub/IndependentStudy/source/normalization/CMakeFiles/Normalization.dir

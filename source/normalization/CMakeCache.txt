@@ -116,7 +116,7 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Nomrmalization
+CMAKE_PROJECT_NAME:STATIC=Normalization
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -181,6 +181,12 @@ Nomrmalization_BINARY_DIR:STATIC=/home/abaybektursun/projects/GitHub/Independent
 
 //Value Computed by CMake
 Nomrmalization_SOURCE_DIR:STATIC=/home/abaybektursun/projects/GitHub/IndependentStudy/source/normalization
+
+//Value Computed by CMake
+Normalization_BINARY_DIR:STATIC=/home/abaybektursun/projects/GitHub/IndependentStudy/source/normalization
+
+//Value Computed by CMake
+Normalization_SOURCE_DIR:STATIC=/home/abaybektursun/projects/GitHub/IndependentStudy/source/normalization
 
 //Path where debug 3rdpaty OpenCV dependencies are located
 OpenCV_3RDPARTY_LIB_DIR_DBG:PATH=/usr/share/OpenCV/3rdparty/lib64

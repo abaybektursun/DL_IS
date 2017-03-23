@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project( Nomrmalization )
+project( Normalization )
 find_package( OpenCV REQUIRED )
-add_executable( Nomrmalization main.cpp )
-target_link_libraries( Nomrmalization ${OpenCV_LIBS} )
+add_executable( Normalization main.cpp )
+target_link_libraries( Normalization ${OpenCV_LIBS} )

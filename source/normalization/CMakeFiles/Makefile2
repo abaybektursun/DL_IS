@@ -56,38 +56,38 @@ CMAKE_SOURCE_DIR = /home/abaybektursun/projects/GitHub/IndependentStudy/source/n
 CMAKE_BINARY_DIR = /home/abaybektursun/projects/GitHub/IndependentStudy/source/normalization
 
 #=============================================================================
-# Target rules for target CMakeFiles/Nomrmalization.dir
+# Target rules for target CMakeFiles/Normalization.dir
 
 # All Build rule for target.
-CMakeFiles/Nomrmalization.dir/all:
-	$(MAKE) -f CMakeFiles/Nomrmalization.dir/build.make CMakeFiles/Nomrmalization.dir/depend
-	$(MAKE) -f CMakeFiles/Nomrmalization.dir/build.make CMakeFiles/Nomrmalization.dir/build
+CMakeFiles/Normalization.dir/all:
+	$(MAKE) -f CMakeFiles/Normalization.dir/build.make CMakeFiles/Normalization.dir/depend
+	$(MAKE) -f CMakeFiles/Normalization.dir/build.make CMakeFiles/Normalization.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/abaybektursun/projects/GitHub/IndependentStudy/source/normalization/CMakeFiles  1
-	@echo "Built target Nomrmalization"
-.PHONY : CMakeFiles/Nomrmalization.dir/all
+	@echo "Built target Normalization"
+.PHONY : CMakeFiles/Normalization.dir/all
 
 # Include target in all.
-all: CMakeFiles/Nomrmalization.dir/all
+all: CMakeFiles/Normalization.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Nomrmalization.dir/rule: cmake_check_build_system
+CMakeFiles/Normalization.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/abaybektursun/projects/GitHub/IndependentStudy/source/normalization/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Nomrmalization.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Normalization.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/abaybektursun/projects/GitHub/IndependentStudy/source/normalization/CMakeFiles 0
-.PHONY : CMakeFiles/Nomrmalization.dir/rule
+.PHONY : CMakeFiles/Normalization.dir/rule
 
 # Convenience name for target.
-Nomrmalization: CMakeFiles/Nomrmalization.dir/rule
-.PHONY : Nomrmalization
+Normalization: CMakeFiles/Normalization.dir/rule
+.PHONY : Normalization
 
 # clean rule for target.
-CMakeFiles/Nomrmalization.dir/clean:
-	$(MAKE) -f CMakeFiles/Nomrmalization.dir/build.make CMakeFiles/Nomrmalization.dir/clean
-.PHONY : CMakeFiles/Nomrmalization.dir/clean
+CMakeFiles/Normalization.dir/clean:
+	$(MAKE) -f CMakeFiles/Normalization.dir/build.make CMakeFiles/Normalization.dir/clean
+.PHONY : CMakeFiles/Normalization.dir/clean
 
 # clean rule for target.
-clean: CMakeFiles/Nomrmalization.dir/clean
+clean: CMakeFiles/Normalization.dir/clean
 .PHONY : clean
 
 #=============================================================================

@@ -102,24 +102,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Nomrmalization
+# Target rules for targets named Normalization
 
 # Build rule for target.
-Nomrmalization: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Nomrmalization
-.PHONY : Nomrmalization
+Normalization: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Normalization
+.PHONY : Normalization
 
 # fast build rule for target.
-Nomrmalization/fast:
-	$(MAKE) -f CMakeFiles/Nomrmalization.dir/build.make CMakeFiles/Nomrmalization.dir/build
-.PHONY : Nomrmalization/fast
+Normalization/fast:
+	$(MAKE) -f CMakeFiles/Normalization.dir/build.make CMakeFiles/Normalization.dir/build
+.PHONY : Normalization/fast
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/Nomrmalization.dir/build.make CMakeFiles/Nomrmalization.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/Normalization.dir/build.make CMakeFiles/Normalization.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -127,7 +127,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/Nomrmalization.dir/build.make CMakeFiles/Nomrmalization.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/Normalization.dir/build.make CMakeFiles/Normalization.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -135,7 +135,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/Nomrmalization.dir/build.make CMakeFiles/Nomrmalization.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/Normalization.dir/build.make CMakeFiles/Normalization.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -144,7 +144,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... Nomrmalization"
+	@echo "... Normalization"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main.o"
