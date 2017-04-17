@@ -1,0 +1,11 @@
+$CAFFE_HOME/build/tools/convert_imageset \
+    --resize_height=128 --resize_width=128 --shuffle  \
+    /home/abaybektursun/projects/GitHub/IndependentStudy/source/data/merged/train/ \
+    /home/abaybektursun/projects/GitHub/IndependentStudy/source/preprocessing/data_massage/merged/caffeLabels \
+    /home/abaybektursun/projects/GitHub/IndependentStudy/source/data/train_lmdb
+
+$CAFFE_HOME/build/tools/convert_imageset \
+    --resize_height=128 --resize_width=128 --shuffle  \
+    /home/abaybektursun/projects/GitHub/IndependentStudy/source/data/merged/test/ \
+    /home/abaybektursun/projects/GitHub/IndependentStudy/source/preprocessing/data_massage/merged/caffeLabels \
+    /home/abaybektursun/projects/GitHub/IndependentStudy/source/data/test_lmdb                                                                                    
