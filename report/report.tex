@@ -116,7 +116,22 @@ $$ = \underset{u,u^Tu=1}{\text{min}} ||u||_2||\nabla_x f(x)||_2cos(\theta) $$
 
 	\subsubsection{Second-order Optimization Algorithms}
 	The optimization methods that involve second order derivatives are called Second-order. There are some advantages of Second-order Optimization Algorithms, but unfortunately they do not always work, if at all. The example of such algorithm would be one that uses Newton's method to jump the desired optima. 
-	
+	\subsection{Regularization}
+	The difference between regular optimization and Deep Learning is that the latter does not optimize for the objective function directly. If a model was optimized to perfectly fit the training set, it will not be able to generalize well. Regularization is a set of strategies that help us to optimize our models while making them more general. Thus, regularization is one of the central themes in DL. \par
+	The simplest regularization strategy is to limit the capacity of a model by adding a parameter norm penalty $ \Omega(\theta) $.
+	$$ 
+	\hat{J}(\theta;X,y) = J(\theta,X,y) + \alpha\Omega(\theta) 
+	$$ 
+	As previously defined $J$ is the cost function, and $\hat{J}$ is a regularized cost function. $\alpha$ is a hyperparameter for fine tunning needed amount of regularization. Assigning $\alpha$ higher value will make generalization stronger. The problem when model performs well on a training set but not on a test set is called overfitting, giving $\alpha$ higher value can remedy the problem. However, if it is too high, we will introduce underfitting, meaning model has a low capacity and performs bad in all the datasets. When we use penalty regularization, we only regularize the model  parameters (weights or synapses) without biases (intercept terms). Regularizing the biases will hurt model badly, introducing huge underfitting problems. Regularization also works better when every layer has it's own version of hyperparameter $\alpha$. \par
+	So, what is the $\Omega(\theta)$ function? The most common version of the function is $L^2$ parameter norm. It's called \textbf{weight decay}, also know as \textbf{ridge regression} or \textbf{Tikhonov Regularization}. It's defined to be:
+	$$ 
+	\Omega(\theta) = \frac{1}{2}||w||_2^2
+	$$
+	Deriving from the original definition of the regularized cost function $\hat{(J)}$ we could arrive at this regularized parameter update with the gradient:
+	$$
+	w \leftarrow (1-\epsilon\alpha)w - \epsilon \nabla_w J(w;X,y).
+	$$
+	This is a precursor to the next section, but we could see that regularized version of the gradient update is modified to shrink the $w$ vector by constant factor on each step.
 	\subsection{Probability}
 	\subsection{Neural Networks}
 	Historically, neural networks were introduced in 1940s and were first developed as shallow linear models [cite]. Since first neural networks were linear, they could not even fit a simple functions like XOR (Which is discussed int he next subsection), and received lot of backlash which almost entirely has killed the whole filed. Many critics of neural networks did not like the sentiment of people embracing nature inspired approach. Non linear learning was achieved during 1960-1970s when computer scientists [Kelly, Denham, Bryson 1960;] were able to develop dynamic methods for computing gradient.
