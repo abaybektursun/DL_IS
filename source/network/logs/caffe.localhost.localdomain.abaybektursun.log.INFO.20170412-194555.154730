@@ -1,0 +1,6 @@
+Log file created at: 2017/04/12 19:45:55
+Running on machine: localhost.localdomain
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0412 19:45:55.902253 154730 caffe.cpp:185] Using GPUs 0
+I0412 19:45:55.908346 154730 caffe.cpp:190] GPU 0: 
+F0412 19:45:55.908444 154730 common.cpp:151] Check failed: error == cudaSuccess (38 vs. 0)  no CUDA-capable device is detected

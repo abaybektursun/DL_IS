@@ -1,0 +1,21 @@
+Log file created at: 2017/04/12 19:54:18
+Running on machine: localhost.localdomain
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0412 19:54:18.084405 162789 caffe.cpp:185] Using GPUs 0
+I0412 19:54:18.108399 162789 caffe.cpp:190] GPU 0: GeForce GTX 960
+I0412 19:54:18.426486 162789 solver.cpp:48] Initializing solver from parameters: 
+test_iter: 100
+test_interval: 500
+base_lr: 0.0001
+display: 100
+max_iter: 5000
+lr_policy: "fixed"
+momentum: 0.9
+weight_decay: 0.004
+snapshot: 5000
+snapshot_prefix: "examples/cifar10/cifar10_quick"
+solver_mode: GPU
+device_id: 0
+net: "examples/cifar10/cifar10_quick_train_test.prototxt"
+snapshot_format: HDF5
+F0412 19:54:18.426723 162789 solver.cpp:438] Cannot write to snapshot prefix 'examples/cifar10/cifar10_quick'.  Make sure that the directory exists and is writeable.
