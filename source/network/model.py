@@ -1,3 +1,4 @@
+import sys
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -12,7 +13,8 @@ import caffe
 # and the image you would like to classify.
 MODEL_FILE = 'cifar_full.prototxt'
 PRETRAINED = 'cifar_full_iter_65000.caffemodel.h5'
-IMAGE_FILE = '/home/abaybektursun/IS/source/data/merged/test/ISIC_0012050.jpg'
+#IMAGE_FILE = '/home/abaybektursun/IS/source/data/merged/test/ISIC_0012050.jpg'
+IMAGE_FILE = str(sys.argv[1])
 
 caffe.set_mode_gpu();
 caffe.set_device(0);
@@ -28,5 +30,7 @@ plt.imshow(input_image)
 prediction = net.predict([input_image])  # predict takes any number of images, and formats them for the Caffe net automatically
 print 'prediction shape:', prediction[0].shape
 plt.plot(prediction[0])
-print 'predicted class:', prediction[0].argmax()
+mb = prediction[0].argmax()
+nb_str = 'Malignant' if mb==1 else 'benign'
+print 'predicted class:', nb_str
 plt.show()

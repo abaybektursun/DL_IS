@@ -1,0 +1,7 @@
+./optimize_image.py --decay 0      --blur-radius 0.5 --blur-every 4  --small-norm-percentile 50     --max-iter 500  --lr-policy progress --lr-params "{'max_lr': 100.0, 'desired_prog': 2.0}"
+./optimize_image.py --decay 0.3    --blur-radius 0   --blur-every 0  --small-norm-percentile 20     --max-iter 750  --lr-policy constant --lr-params "{'lr': 100.0}"
+./optimize_image.py --decay 0.0001 --blur-radius 1.0 --blur-every 4                                 --max-iter 1000 --lr-policy constant --lr-params "{'lr': 100.0}"
+./optimize_image.py --decay 0      --blur-radius 0.5 --blur-every 4  --px-abs-benefit-percentile 90 --max-iter 1000 --lr-policy progress --lr-params "{'max_lr': 100000000, 'desired_prog': 2.0}"
+
+sudo ./optimize_image.py --decay 0 --blur-radius 0.5 --blur-every 4  --small-norm-percentile 50 --max-iter 500  --lr-policy progress --lr-params "{'max_lr': 100.0, 'desired_prog': 2.0}" --data-size "(128,128)" --push-layer ip1 --push-channel 0
+
