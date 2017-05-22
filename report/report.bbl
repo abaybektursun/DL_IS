@@ -1,3 +1,66 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{Goodfellow-et-al-2016}
+Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+\newblock {\em Deep Learning}.
+\newblock MIT Press, 2016.
+\newblock \url{http://www.deeplearningbook.org}.
+
+\bibitem{YoshuaBengioQuoraWhy-did-it-take-so-long}
+Yoshua bengio's answer on quora.
+\newblock
+  \url{https://www.quora.com/Why-did-it-take-so-long-to-invent-the-backpropagation-algorithm-Isnt-it-just-a-straightforward-albeit-cumbersome-application-of-the-chain-rule/answer/Yoshua-Bengio?srid=vNI2}.
+\newblock Accessed: 2017-04-15.
+
+\bibitem{Machine-Learning-Tom-Mitchell-1997}
+McGraw~Hill Tom~Mitchell.
+\newblock {\em Machine Learning}.
+\newblock McGraw-Hill Education, 1997.
+
+\bibitem{Sietsma-Dow}
+Robert J. F.~Dow Jocelyn~Sietsma.
+\newblock Creating artificial neural networks that generalize.
+\newblock {\em ACM}, 4:67--79, 1991.
+
+\bibitem{autoencoders-Poole}
+Surya~Ganguli Ben~Poole, Jascha Sohl-Dickstein.
+\newblock Analyzing noise in autoencoders and deep networks.
+\newblock 1991.
+
+\bibitem{Breiman1996}
+Leo Breiman.
+\newblock Bagging predictors.
+\newblock {\em Machine Learning}, 24(2):123--140, 1996.
+
+\bibitem{5197422}
+Y.~Koren, R.~Bell, and C.~Volinsky.
+\newblock Matrix factorization techniques for recommender systems.
+\newblock {\em Computer}, 42(8):30--37, Aug 2009.
+
+\bibitem{Kelley-1960}
+Henry~J. Kelley.
+\newblock Gradient theory of optimal flight paths.
+\newblock {\em ARS Journal}, 30, 1960.
+
+\bibitem{Cai:2016:MND:2895845.2896008}
+Meng Cai and Jia Liu.
+\newblock Maxout neurons for deep convolutional and lstm neural networks in
+  speech recognition.
+\newblock {\em Speech Commun.}, 77(C):53--64, March 2016.
+
+\bibitem{Hornik1989359}
+Kurt Hornik, Maxwell Stinchcombe, and Halbert White.
+\newblock Multilayer feedforward networks are universal approximators.
+\newblock {\em Neural Networks}, 2(5):359 -- 366, 1989.
+
+\bibitem{daggerfs}
+Yangqing jia's website.
+\newblock \url{http://daggerfs.com/}.
+\newblock Accessed: 2017-04-15.
+
+\bibitem{caffe-berkeleyvision}
+Caffe.
+\newblock \url{http://caffe.berkeleyvision.org/}.
+\newblock Accessed: 2017-04-15.
 
 \end{thebibliography}
