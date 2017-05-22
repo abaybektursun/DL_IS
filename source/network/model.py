@@ -12,7 +12,7 @@ import caffe
 # Set the right path to your model definition file, pretrained model weights,
 # and the image you would like to classify.
 MODEL_FILE = 'cifar_full.prototxt'
-PRETRAINED = 'cifar_full_iter_65000.caffemodel.h5'
+PRETRAINED = 'cifar_full_iter_10000.caffemodel.h5'
 #IMAGE_FILE = '/home/abaybektursun/IS/source/data/merged/test/ISIC_0012050.jpg'
 IMAGE_FILE = str(sys.argv[1])
 
