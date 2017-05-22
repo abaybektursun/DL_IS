@@ -117,7 +117,8 @@ $$ = \underset{u,u^Tu=1}{\text{min}} ||u||_2||\nabla_x f(x)||_2cos(\theta) $$
 	\subsubsection{Second-order Optimization Algorithms}
 	The optimization methods that involve second order derivatives are called Second-order. There are some advantages of Second-order Optimization Algorithms, but unfortunately they do not always work, if at all. The example of such algorithm would be one that uses Newton's method to jump the desired optima. 
 	\subsection{Regularization}
-	The difference between regular optimization and Deep Learning is that the latter does not optimize for the objective function directly. If a model was optimized to perfectly fit the training set, it will not be able to generalize well. Regularization is a set of strategies that help us to optimize our models while making them more general. Thus, regularization is one of the central themes in DL. \par
+	The difference between regular optimization and Deep Learning is that the latter does not optimize for the objective function directly. If a model was optimized to perfectly fit the training set, it will not be able to generalize well, and fail to achieve desired accuracy when exposed to new data. Regularization is a set of strategies that help us optimize our models while making them more general. Thus, regularization is one of the central themes in DL. There are many ways to perform regularization, among them: adding constraints to the parameters, adding soft constraints in form of additions of extra terms to the cost function, combining multiple hypothesis (ensemble method), and generating new data by adding noise to existing dataset.
+	\par
 	The simplest regularization strategy is to limit the capacity of a model by adding a parameter norm penalty $ \Omega(\theta) $.
 	$$ 
 	\hat{J}(\theta;X,y) = J(\theta,X,y) + \alpha\Omega(\theta) 
@@ -127,12 +128,39 @@ $$ = \underset{u,u^Tu=1}{\text{min}} ||u||_2||\nabla_x f(x)||_2cos(\theta) $$
 	$$ 
 	\Omega(\theta) = \frac{1}{2}||w||_2^2
 	$$
-	Deriving from the original definition of the regularized cost function $\hat{(J)}$ we could arrive at this regularized parameter update with the gradient:
+	Notice that the input variable is $\theta$ but the function involves the $L^2$ norm of the $w$, here $w$ is a parameter vector without bias terms. Deriving from the original definition of the regularized cost function $\hat{(J)}$ we could arrive at this regularized parameter update with the gradient:
 	$$
 	w \leftarrow (1-\epsilon\alpha)w - \epsilon \nabla_w J(w;X,y).
 	$$
-	This is a precursor to the next section, but we could see that regularized version of the gradient update is modified to shrink the $w$ vector by constant factor on each step.
-	\subsection{Probability}
+	This is a precursor to the next section, but we could see that regularized version of the gradient update is modified to shrink the $w$ vector by constant factor on each step (step is single iteration of the backpropagation algorithm). 
+	\par Let's look at closer analysis of weight decay with linear regression. The cost function:
+	$$ 
+	(Xw-y)^\top(Xw-y)
+	$$
+	We add $L^2$ regularization:
+	$$
+	(Xw-y)^\top(Xw-y) + \frac{1}{2} \alpha w^\top w
+	$$
+	The solution with normal equations gives us:
+	$$
+	w = (X^\top X + \alpha I)^{-1}X^\top y
+	$$
+	For contrast, this is the solution to non regularized cost:
+	$$
+	w = (X^\top X)^{-1}X^\top y
+	$$
+	The difference is that we replaced $(X^\top X)$ with $(X^\top X + \alpha I)$. The matrix $X^\top X$ is proportional to the covariance matrix $\frac{1}{m}X^\top X$. In the regularized version, we are adding $\alpha$ to the diagonal, this is same as adding $\alpha$ to the variance each input variable, therefore making learning system perceive the design matrix $X$ as having higher variance. This in turn causes the learner to shrink the parameters on features whose covariance with the output target is lower than the added variance.
+	\par
+	One of the main reasons why machine learning models are becoming ever so powerful is availability of large amounts of data. The rule of thumb is the more training data you have, the less regularization is needed. Unfortunately, the amount of data we could acquire is usually limited. This problem could be solved by generating new data using the existing training data. This technique is called \textbf{Data Augmentation}. It's done by adding random noise to the data [Sietsma and Dow, 1991], and rotating and flipping the input features. This works especially well with highly dimensional problems like computer vision, and audio processing. The noise can be added both directly to data and hidden layers [Poole at al., 2014]. Data augmentation is proven to work very well. One of the specific examples of augmentation is regularization method called \textbf{Dropout} which can be seen as generating new input by multiplying by noise. We will next look into ensemble methods which will lead us to understanding Dropout.
+	\par 
+	\textbf{Bagging} is a popular regularization technique and it stands for \textbf{bootstrap aggregation} [Breiman, 1994]. The idea behind bagging is training multiple models, and combining them to perform a common task, this also known as \textbf{model averaging}. Algorithms that use this strategy are called \textbf{ensemble methods}. Let's say we have $k$ regression models. Then the error associated with each model is $\epsilon_i$, and we assume that error drawn from zero mean multivariate normal distribution with variance $v = \mathbb E[\epsilon_i^2] $ and covariance $c = \mathbb E[\epsilon_i\epsilon_j] $. Then the average error is $\frac{1}{k}\sum_i \epsilon_i$. The expected squared error is:
+	$$
+	\mathbb E\bigg[\bigg(\frac{1}{k}\sum_i \epsilon_i\bigg)^2\bigg] = \frac{1}{k^2}\mathbb E\bigg[  \sum_i\bigg( \epsilon_i^2 + \sum_{j \not = i} \epsilon_i\epsilon_j \bigg) \bigg] = \frac{1}{k}v + \frac{k-1}{k}c
+	$$
+	If $c = v $, errors are perfectly correlated meaning model averaging is not going to be helpful. If $c=0$
+	then the error are perfectly uncorrelated and the ensemble error equals $\frac{1}{k}v$, which tells that bigger the ensemble size, smaller the error, and smaller than error of any individual model of the ensemble.
+	This idea of combing models is so powerful that making ensemble bigger almost linearly improves the performance of a Deep Learning system. All the latest competition winners employ large ensembles of networks like Netflix Grand Prize winner [Koren, 2009]. However, ensemble methods are not used when developing new Deep Learning methods since research teams with powerful hardware will be able to train much better models just by adding more networks, and making benchmarking the new algorithms very hard.
+
 	\subsection{Neural Networks}
 	Historically, neural networks were introduced in 1940s and were first developed as shallow linear models [cite]. Since first neural networks were linear, they could not even fit a simple functions like XOR (Which is discussed int he next subsection), and received lot of backlash which almost entirely killed the filed. Furthermore, critics of neural networks did not like the sentiment of people taking nature inspired approach. Non linear learning was achieved during 1960-1970s when computer scientists [Kelly, Denham, Bryson 1960;] were able to develop dynamic methods for computing gradient.
 	The first push that brought Neural Networks to live was the book called Parallel Distributed Processing which showcased successful applications of learning though backpropagation.
@@ -305,14 +333,6 @@ $$ = \underset{u,u^Tu=1}{\text{min}} ||u||_2||\nabla_x f(x)||_2cos(\theta) $$
 	\newline Quick: 
 		0m 50.972s
 	Test net output: accuracy = 0.7535
-	
-	
-	
-	
-	\section{Analysis of the Results and Further Investigation of Conv Net Architectures}
-	\section{Classification of Skin Cancer Using GPU Accelerated [Architecture] on Caffe}
-	\section{Analysis of the Skin Cancer Classification Results}
-	
 	
 
 \bibliographystyle{plain}
