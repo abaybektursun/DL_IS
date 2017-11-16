@@ -1,1 +1,0 @@
-from NumericalGradient import NumericalGradient

@@ -12,6 +12,26 @@ Yoshua bengio's answer on quora.
   \url{https://www.quora.com/Why-did-it-take-so-long-to-invent-the-backpropagation-algorithm-Isnt-it-just-a-straightforward-albeit-cumbersome-application-of-the-chain-rule/answer/Yoshua-Bengio?srid=vNI2}.
 \newblock Accessed: 2017-04-15.
 
+\bibitem{PH2}
+PH2 Database
+\newblock
+  \url{https://www.fc.up.pt/addi/ph2%20database.html}.
+\newblock Accessed: 2017-04-11.
+
+\bibitem{ISIC}
+ISIC Dataset
+\newblock
+  \url{https://isic-archive.com/}.
+\newblock Accessed: 2017-04-11.
+
+\bibitem{sorucecode}
+Source Code
+\newblock
+  \url{https://github.com/erolrecep/IndependentStudy}.
+\newblock Accessed: 2017-04-11.
+
+
+
 \bibitem{Machine-Learning-Tom-Mitchell-1997}
 McGraw~Hill Tom~Mitchell.
 \newblock {\em Machine Learning}.

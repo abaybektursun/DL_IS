@@ -1,4 +1,4 @@
-
+%%{\tiny }
 %%% Preamble
 \documentclass[paper=a4, fontsize=11pt]{scrartcl}
 \usepackage[T1]{fontenc}
@@ -52,7 +52,7 @@
 \author{
 	\normalfont 			\normalsize
 	Abay Bektursun\\[-3pt]	\normalsize
-	Fall 2017\\[-3pt]	\normalsize
+	Spring. 2017\\[-3pt]	\normalsize
 }
 \date{}
 
@@ -343,7 +343,41 @@ $$ = \underset{u,u^Tu=1}{\text{min}} ||u||_2||\nabla_x f(x)||_2cos(\theta) $$
 	\newline Quick: 
 		0m 50.972s
 	Test net output: accuracy = 0.7535
+	\section{Case Study: ISIC and PH2 Datasets}
+	Using the similar architecture as shown in figure \ref{fig:cifar} a network can be trained to predict malignancy of skin lesions. Given an image is it class 0 or is it class 1, benign and malignant respectively. With the solution shown below best accuracy of $0.9325$ was achieved.
 	
+	\par The PH2 \cite{PH2} dermoscopic image database for research and benchmarking includes the manual segmentation, the clinical diagnosis, and the identification of several dermoscopic structures, performed by expert dermatologists, in a set of 200 dermoscopic images. 
+	
+	\par ISIC \cite{ISIC} is a much larger, in fact the larges database of skin lesions in the world. The ISIC Dataset has been developed to provide a large public repository of expertly annotated high quality skin images for use by clinicians and educators to improve diagnostic skills and provide clinical support in the identification of skin cancer, the general public for self-education about melanoma and the benefits of early detection and developers to develop and test algorithms for skin cancer triage and diagnosis
+	
+	\par First trials were performed purely on ISIC dataset, with base learning rate of $0.005$, $0.9$ momentum, weight decay of $0.004$ and best results varying between $.87 - .90$ accuracy. The learning rate was reduced after 8 epochs by a factor of 10.
+	
+	\par Experimenting with hyper parameters and adding PH2 dataset to both test and training sets, good improvements in accuracy and loss were achieved. 
+	ISIC and Ph2 were merged. 60\% of random data is train 40\% is test. Subtracted mean is accumulated from train. Only one go, learning rates were not adjusted later epochs. In total 100 test iterations are performed with learning rate of 0.001, 0.9 momentum, 0.004 weight decay, fixed learning rate policy and 10000 training iterations. This hyper parameters brought the best result of $0.9325$ accuracy.	
+
+	
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[scale=0.61]{trail_4.png}
+			\caption{Learning Curve}
+			\label{fig:learn}
+		\end{figure}
+		
+	Source code to the Latex of this report and the case study can be found here \cite{sorucecode}.
+	If desired, mean of the images can be calculated using "preprocessing/calculate\_mean.sh". It can be converted to .npy format for deployment using "bp2npy.py".
+	The datasets can be translated to protobuff and scaled using  "preprocessing/data\_massage/merged/convert\_imageset". 
+	ISIC labels can be acquired using ISIC Rest API \cite{ISIC}. 
+	Trained model is called "cifar\_full\_iter\_10000.solverstate.h5" and the Caffe network definition with solver are called "cifar\_full.prototxt" and "cifar\_full\_solver.prototxt" respectively, all located in "network/" folder.
+	Model deployment example was written in network/model.py
+	A case of deploying model given below. \newline
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[scale=0.42]{image.png}
+		\caption{Deploying trained model, correct prediction of the image}
+		\label{fig:example}
+	\end{figure}
+	
+\newpage
 
 \bibliographystyle{unsrt}
 \bibliography{ref}
